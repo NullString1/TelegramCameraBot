@@ -26,7 +26,7 @@ adminIDs = []
 userIDs = []
 
 with open(path+"ids.json", "r") as f:
-    data=json.loads(f.read())
+    data = json.loads(f.read())
     for user in data["adminIDs"]:
         adminIDs.append(user)
     for user in data["userIDs"]:
@@ -100,8 +100,7 @@ sel (i) - sends last i video
 users - lists users
 admins - lists admins
 addUser (id) - adds a new user with id (ADMINS only)
-addAdmin (id) - adds a new admin with id (ADMINS only)
-kill / stop - stops the bot (ADMINS ONLY)""")
+addAdmin (id) - adds a new admin with id (ADMINS only)""")
 
 @restricted(adminIDs)
 def addUser(update: Update, context: CallbackContext) -> None:
@@ -131,6 +130,8 @@ def addAdmin(update: Update, context: CallbackContext) -> None:
 
 @restricted(adminIDs)
 def restart_command(update: Update, context: CallbackContext) -> None:
+    log(update.effective_user, "Received kill signal")
+    update.message.reply_text("Killed.")
     os._exit(0)
 
 @restricted(userIDs)
@@ -180,7 +181,6 @@ def start_command(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     updater = Updater(telegram_api_key)
     dispatcher = updater.dispatcher
-
     dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(CommandHandler("start", start_command))
 
@@ -196,6 +196,7 @@ def main() -> None:
     logger.info("Started.")
 
     updater.start_polling()
+
     updater.idle()
 
 
