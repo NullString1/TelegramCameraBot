@@ -42,3 +42,6 @@ Note: When adding an admin, ensure they are also added as a user
 # Script
 - `cambot.py` - `/usr/local/bin/cambot.py`
 - `cambot.service` - `/etc/systemd/system/cambot.service`
+# Logs
+- `systemctl status cambot`
+- `tail -f /var/log/cambot.log`
