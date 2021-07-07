@@ -22,6 +22,20 @@ Telegram bot built with python-telegram-bot allowing commands which return secur
    5. You should see `Installation succeeded. Restart required.`
    6. Restart the device
 
+# Usage
+| Command | Alt | Alt | Usage | Admin Only? |
+| ------- | ----| --- | ----- | ----------- |
+| video | last | clip | sends last recorded motion clip | &cross; |
+| now | pic | clipp | send picture of current scene | &cross; |
+| sel i | | | sends last i video `eg sel 1 or sel 5` | &cross; |
+| users ||| lists users | &cross; |
+| admins ||| lists admins | &cross; |
+| kill | stop || kills the bot | &check; |
+| addUser ||| adds a new user | &check; |
+| addAdmin ||| adds a new admin | &check; |
+
+Note: When adding an admin, ensure they are also added as a user
+
 # Configuration files
 - `ids.json` - `/var/lib/cambot/ids.json`
 - `cambot.conf` - `/var/lib/cambot/cambot.conf`
