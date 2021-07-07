@@ -1,0 +1,10 @@
+[Unit]
+Description=Telegram bot for motion and motioneye. Built by NullString1
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/cambot.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
