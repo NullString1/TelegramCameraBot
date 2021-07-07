@@ -15,8 +15,8 @@ Telegram bot built with python-telegram-bot allowing commands which return secur
    1. Start a conversation with `@JsonDumpBot`
    2. Copy id under chat
 8. Run setup.py as root to install cambot. `sudo python3 setup.py`  - Note: Root is required to install as systemd service and to write to certain directories.
-   1. Configure path or leave default (/var/lib/motioneye/Camera1)
-   2. Configure motion api address or leave default (http://localhost:7999/0)
+   1. Configure path or leave default `(/var/lib/motioneye/Camera1)`
+   2. Configure motion api address or leave default `(http://localhost:7999/0)`
    3. Configure telegram bot api key/token
    4. Configure adminIDs. If multiple use a comma seperated list. `eg. 1234567890,0987654321`. Note users and admins can be added later.
    5. You should see `Installation succeeded. Restart required.`
